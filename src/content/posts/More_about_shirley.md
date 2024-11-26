@@ -2,7 +2,7 @@
 title: More about shirley
 published: 2024-11-26
 description: ''
-image: ''
+image: './More_about_shirley/1.jpg'
 tags: [XAS, XPS, ARPES, Data processing]
 category: 'ARPES'
 draft: false 
@@ -19,25 +19,25 @@ $$
 \forall\epsilon<E,p(E\rightarrow\epsilon)=p_0
 $$
 
-2. 损失能量的电子数$\dd{n'}$正比于总的电子数（$\dd{n}+\dd{n'}$），其比例系数是一个不依赖于始末态的常数：
+2. 损失能量的电子数$\text{d}{n'}$正比于总的电子数（$\text{d}{n}+\text{d}{n'}$），其比例系数是一个不依赖于始末态的常数：
 
 $$
-\dd{n'}(E)=\alpha(\dd{n}(E)+\dd{n'}(E))
+\text{d}{n'}(E)=\alpha(\text{d}{n}(E)+\text{d}{n'}(E))
 $$
 
-记测量的光谱曲线为$J(E)$，本底为$S(E)$，原谱减去本底得到的校正谱为$J(E)-S(E)$。校正谱为弹性散射的电子信号，处于$[E,E+\dd{E}]$区间内的电子数$\dd{n}$正比于该区间的信号强度（假设比例系数在很窄的能量区间内不依赖于能量，实际上，光电子强度与入射光强度、跃迁概率等均有关）：
+记测量的光谱曲线为$J(E)$，本底为$S(E)$，原谱减去本底得到的校正谱为$J(E)-S(E)$。校正谱为弹性散射的电子信号，处于$[E,E+\text{d}{E}]$区间内的电子数$\text{d}{n}$正比于该区间的信号强度（假设比例系数在很窄的能量区间内不依赖于能量，实际上，光电子强度与入射光强度、跃迁概率等均有关）：
 $$
-\dd{n}(E)=\beta[J(E)-S(E)]\dd{E}
+\text{d}{n}(E)=\beta[J(E)-S(E)]\text{d}{E}
 $$
-代入基本假设2，可以解出$\dd{n'}$：
+代入基本假设2，可以解出$\text{d}{n'}$：
 $$
-\dd{n'}=\frac{\alpha\beta}{1-\alpha}[J(E)-S(E)]\dd{E}
+\text{d}{n'}=\frac{\alpha\beta}{1-\alpha}[J(E)-S(E)]\text{d}{E}
 $$
-这些电子将按照$p_0\dd{\epsilon}$为概率，为$[\epsilon,\epsilon+\dd{\epsilon}]$区间内提供本底信号强度：
+这些电子将按照$p_0\text{d}{\epsilon}$为概率，为$[\epsilon,\epsilon+\text{d}{\epsilon}]$区间内提供本底信号强度：
 $$
-S(\epsilon,E)\dd{\epsilon}=\frac{\alpha\beta p_0\dd{\epsilon}}{1-\alpha}[J(E)-S(E)]\dd{E}
+S(\epsilon,E)\text{d}{\epsilon}=\frac{\alpha\beta p_0\text{d}{\epsilon}}{1-\alpha}[J(E)-S(E)]\text{d}{E}
 $$
-其中，$S(\epsilon,E)\dd{\epsilon}$表示初态为能量$E$的电子在能量$\epsilon$处形成的那一部分本底信号强度。因而，总的本底信号是对所有$E>\epsilon$的求和：
+其中，$S(\epsilon,E)\text{d}{\epsilon}$表示初态为能量$E$的电子在能量$\epsilon$处形成的那一部分本底信号强度。因而，总的本底信号是对所有$E>\epsilon$的求和：
 $$
 S(\epsilon)=\sum_{E=\epsilon}^{+\infty}S(\epsilon,E)
 =S\left( \varepsilon \right) =k\int_{\varepsilon}^{+\infty}{\left[ J\left( E \right) -S\left( E \right) \right] \text{d}E}
@@ -54,7 +54,7 @@ $$
 $$
 S(\epsilon) =kQ(\epsilon)+b'
 $$
-式中，$Q(\epsilon)=\int_\epsilon^{E_b}[J-S]\dd{E}$为校正谱处于$\epsilon$与$E_b$之间的面积，而$b'$则取决于该峰与其他峰的相对位置。在该峰区域内，$b'$是不依赖于$\epsilon$的常数。
+式中，$Q(\epsilon)=\int_\epsilon^{E_b}[J-S]\text{d}{E}$为校正谱处于$\epsilon$与$E_b$之间的面积，而$b'$则取决于该峰与其他峰的相对位置。在该峰区域内，$b'$是不依赖于$\epsilon$的常数。
 
 2. 若$\epsilon$处无峰。则：
 
@@ -68,11 +68,11 @@ $$
 
 下面是求解Shirley的算法部分。首先假设某峰的高能边（$E_b$）和低能边（$E_a$）的高度$J(E_a)=S(E_a)=a,J(E_b)=S(E_b) = b$。结合$S(\epsilon)=kQ(\epsilon)+b'$，可得：
 $$
-b'=b, k=\frac{a-b}{I},I=\int_{E_a}^{E_b}[J(\epsilon)-S(\epsilon)]\dd{\epsilon}
+b'=b, k=\frac{a-b}{I},I=\int_{E_a}^{E_b}[J(\epsilon)-S(\epsilon)]\text{d}{\epsilon}
 $$
 其中$I$便是校正谱中，该峰的总面积。不妨定义泛函：
 $$
-\psi[S(\epsilon),E]=\int_{E}^{E_b}[J(\epsilon)-S(\epsilon)]\dd{\epsilon}
+\psi[S(\epsilon),E]=\int_{E}^{E_b}[J(\epsilon)-S(\epsilon)]\text{d}{\epsilon}
 $$
 则有：
 $$
