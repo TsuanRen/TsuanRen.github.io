@@ -23,9 +23,9 @@ $$
 
 <img src = "images\kz_mapping\kzcontour.png" style="zoom:50%;" >
 
-![Example]("/images/kz_mapping/kzcontour.png")
+![Example](/images/kz_mapping/kzcontour.png)
 
-![Example]("\images\kz_mapping\kzcontour.png")
+![Example](\images\kz_mapping\kzcontour.png)
 
 ### 确定Mapping的Contour图像区域
 
