@@ -17,14 +17,14 @@ j_\alpha = \sigma_{\alpha\beta}E_\beta \text{\quad and\quad}E_\alpha = \rho_{\al
 $$
 在磁场存在的情况下，上式仍然成立，但 Onsager's reciprocity principle 将被 Time reversal 取代：
 $$
-\sigma_{\alpha\beta}(\bold B)=\sigma_{\beta\alpha}(-\bold B) \tag{1}\label{eq1}
+\sigma_{\alpha\beta}(\bold B)=\sigma_{\beta\alpha}(-\bold B) \tag{1}
 $$
 将电导率张量展开为对称张量与反对称张量：
 $$
 S_{\alpha\beta}=\frac{1}{2}(\sigma_{\alpha\beta}+\sigma_{\beta\alpha})\\
 A_{\alpha\beta} = \frac{1}{2}(\sigma_{\alpha\beta}-\sigma_{\beta\alpha})
 $$
-将$\eqref{eq1}$中的Time reversal 代入上式，不难发现$S,A$分别是$\bold B$的偶、奇函数。假设可以将其展开为$\bold B$的幂级数，则：
+将$(1)$中的Time reversal 代入上式，不难发现$S,A$分别是$\bold B$的偶、奇函数。假设可以将其展开为$\bold B$的幂级数，则：
 $$
 S_{\alpha\beta}=(\sigma_0)_{\alpha\beta}+\zeta_{\alpha\beta\gamma\delta}B_{\gamma}B_\delta\\
 A_{\alpha\beta} = \epsilon_{\alpha\beta\gamma}A_\gamma=  \epsilon_{\alpha\beta\gamma}\xi_{\gamma\delta}B_\delta
@@ -51,11 +51,19 @@ $$
 $$
 \bold E=-\bold v\times\bold B=\frac{1}{ne}\bold j\times\bold B
 $$
-其中，$\bold j = -ne\bold v$为电流密度，$n$为（实空间的）电子密度分布。这一电场可以是预先施加的，$\bold E,\bold B$共同组成了一个“速度选择器”，筛选出了符合的电流$\bold j$。从这一点来看，$\bold E$**维持**了在$\bold B$的偏转作用的阻碍下的稳恒电流$\bold j$，但其并不能形成这一电流，即，这一电流并不受$\bold E$**做功**。而通常情况下，我们考虑的都是存在缺陷对电流造成散射的情况，此时由于存在耗散，故**维持**这一电流必然意味着需要对这一电流**做功**。不妨从形式上化简上式：
+其中，$\bold j = -ne\bold v$为电流密度，$n$为（实空间的）电子密度分布。
+
+:::note 
+
+这一电场可以是预先施加的，$\bold E,\bold B$共同组成了一个“速度选择器”，筛选出了符合的电流$\bold j$。从这一点来看，$\bold E$**维持**了在$\bold B$的偏转作用的阻碍下的稳恒电流$\bold j$，但其并不能形成这一电流，即，这一电流并不受$\bold E$**做功**。而通常情况下，我们考虑的都是存在缺陷对电流造成散射的情况，此时由于存在耗散，故**维持**这一电流必然意味着需要对这一电流**做功**。
+
+:::
+
+不妨从形式上化简上式：
 $$
-\begin{eqnarray}
-E_\alpha &=& \frac{1}{ne}\epsilon_{\alpha\beta\gamma}j_\beta B_\gamma=\frac{B}{ne}\epsilon_{\alpha\beta z}j_\beta\\
-\end{eqnarray}
+\begin{align}
+E_\alpha &= \frac{1}{ne}\epsilon_{\alpha\beta\gamma}j_\beta B_\gamma=\frac{B}{ne}\epsilon_{\alpha\beta z}j_\beta\\
+\end{align}
 $$
 其中：
 $$
@@ -75,7 +83,7 @@ $$
 $$
 或者写做Ohm's law的形式：
 $$
-\bold E = \bold \sigma \bold j,\;\sigma=\frac{B}{ne}\left(\begin{matrix} 
+\bold E = \bold \rho \bold j,\;\rho=\frac{B}{ne}\left(\begin{matrix} 
 0&1&0\\  
 -1&0&0\\
 0&0&0
@@ -86,11 +94,40 @@ $$
 
 在存在磁场的情况下，弛豫时间近似的运动方程（EOM）为：
 $$
-\frac{\dd{\bold {p}}}{\dd t} =-e\bold E-e\frac{\bold p}{m}\times \bold B-\frac{\bold p}{\tau}\bra{x}\ket{y} 
+\frac{\text{d}{\bold {p}}}{\text{d} t} =-e\bold E-e\frac{\bold p}{m}\times \bold B-\frac{\bold p}{\tau}
+$$
+
+其中，$\tau$为弛豫时间。粒子间的互作用（散射）越强，$\tau$越小（准粒子寿命越短）。散射项（$-\bold p /\tau$）总是与动量方向相反，为电子的运动提供了阻力。当稳恒电流建立之后，电子动量不再随时间变化，即：
+$$
+e\bold E+\frac{eB}{m}\bold p\times\hat z+\frac{1}{\tau}\bold p=0
+$$
+其中，$\bold p=-m\bold j/ne$，回旋频率$\omega_c$（磁场力为向心力的角速度，或圆频率，角速度是一秒转的角度，频率是一秒转的圈数，应该是角速度除去2$\pi$）为$eB/m$。代入上式，得：
+$$
+e\bold E-\frac{m\omega_c}{ne} \bold j\times\hat z-\frac{m}{ne\tau}\bold j=0
+$$
+即：
+$$
+\begin{align}
+E_\alpha&=\frac{m}{ne^2}({\omega_c}\epsilon_{\alpha\beta z}+\frac{1}{\tau}\delta_{\alpha\beta})j_\beta
+\end{align}
+$$
+写成矩阵表达式为：
+$$
+\bold E = \rho\bold j,\;\rho=
+\frac{m}{ne^2}\left(\begin{matrix}
+\tau^{-1}&\omega_c&0\\
+-\omega_c&\tau^{-1}&0\\
+0&0&\tau^{-1}
+
+\end{matrix}\right)
 $$
 
 
+:::tip
 
+实际上，稳恒电流的条件为$(\partial\bold p/\partial t)_r=0$。由于这里动量对于位置矢量$\bold r$仍然是各向同性的，因而可以认为稳恒电流建立时$\dd{\bold p}/\dd{t}=0$。另外，这里求得的电场是指**稳恒电流建立后**，作用在电流的单电子上的电场。而不是最初的外加电场。
+
+:::
 
 
 
