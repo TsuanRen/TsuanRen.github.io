@@ -4,7 +4,7 @@ published: 2024-11-27
 description: ''
 image: ''
 tags: [Hall,Theory]
-category: ''
+category: 'Theory'
 draft: false 
 lang: ''
 ---
@@ -129,6 +129,10 @@ $$
 实际上，稳恒电流的条件为$(\partial\bold p/\partial t)_r=0$。由于这里动量对于位置矢量$\bold r$仍然是各向同性的，因而可以认为稳恒电流建立时$\text{d}{\bold p}/\text{d}{t}=0$。另外，这里求得的电场是指**稳恒电流建立后**，作用在电流的单电子上的电场。而不是最初的外加电场。这其实并不奇怪，在直流电路中，所谓的电压也是稳恒电流形成之后，末态的电场形成的电压。
 
 :::
+
+## 载流子迁移率
+
+
 
 
 
