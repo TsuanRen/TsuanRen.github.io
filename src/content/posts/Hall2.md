@@ -1,5 +1,5 @@
 ---
-title: Hall Effect: Integer
+title: Hall Effect-Integer
 published: 2024-12-31
 description: ''
 image: ''
